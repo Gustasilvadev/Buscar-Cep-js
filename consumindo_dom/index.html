@@ -4,30 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buscador de CEP</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <h1>Buscador de Endereço via CEP</h1>
+    <div class="container">
+      <header>
+        <h1>Buscador de Endereço via CEP</h1>
+        <p>Encontre endereços completos em todo o Brasil</p>
+      </header>
 
-    <div>
-      <label for="cep-input">Digite o CEP (apenas números):</label>
+      <section class="busca-section">
+        <div class="input-group">
+          <label for="cep-input">Digite o CEP (apenas números):</label>
+          <input type="text" id="cep-input" placeholder="01001000" maxlength="8" />
+          <button id="buscar-btn">Buscar Endereço</button>
+        </div>
+      </section>
 
-      <input type="text" id="cep-input" placeholder="01001000" />
+      <section class="resultados-section">
+        <h2>Resultado da Busca:</h2>
+        <div id="resultado">
+          <p><strong>Logradouro:</strong> <span id="logradouro"></span></p>
+          <p><strong>Bairro:</strong> <span id="bairro"></span></p>
+          <p><strong>Cidade:</strong> <span id="cidade"></span></p>
+          <p><strong>Estado (UF):</strong> <span id="uf"></span></p>
+          <p><strong>DDD:</strong> <span id="ddd"></span></p>
+        </div>
 
-      <button id="buscar-btn">Buscar</button>
+        <div id="erro-mensagem"></div>
+      </section>
     </div>
-
-    <hr/>
-    <h2>Resultado:</h2>
-
-    <div id="resultado">
-      <p><strong>Logradouro:</strong> <span id="logradouro"></span></p>
-      <p><strong>Bairro:</strong> <span id="bairro"></span></p>
-      <p><strong>Cidade:</strong> <span id="cidade"></span></p>
-      <p><strong>Estado (UF):</strong> <span id="uf"></span></p>
-      <p><strong>DDD:</strong> <span id="ddd"></span></p>
-    </div>
-
-    <div id="erro-mensagem" style="color: red; margin-top: 15px"></div>
 
     <script src="main.js"></script>
   </body>
